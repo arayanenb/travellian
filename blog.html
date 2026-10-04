@@ -1,26 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="index.css"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog — Travellian</title>
+  <meta name="description" content="Travel guides, tips and stories from the road — written by Travellian's planners and travellers."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
-      <!-- ── BLOG ── -->
-  <section class="section blog-detail">
-    <div class="blog-grid">
-      <div class="blog-img-wrap">
-        <div class="blog-img"></div>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <header class="navbar navbar--solid" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">✈</span>
+        <span class="logo-text">Travellian</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="index.html#destinations">Explore</a>
+        <a href="index.html#planners">Travel</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="index.html#offers">Pricing</a>
+        <div class="nav-mobile-auth">
+          <button class="btn btn-ghost" type="button">Login</button>
+          <button class="btn btn-primary" type="button">Sign Up</button>
+        </div>
+      </nav>
+
+      <div class="nav-auth">
+        <button class="btn btn-ghost" type="button">Login</button>
+        <button class="btn btn-primary" type="button">Sign Up</button>
       </div>
-      <div class="blog-content">
-        <p class="section-sub">Our Blog</p>
-        <p class="section-desc">An insight into the incredible experience in the world</p>
-        <h2 class="blog-title">Beautiful Italy<br>Let's travel</h2>
-        <p class="blog-text">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness .</p>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════ BLOG HERO ══════════ -->
+  <section class="blog-hero">
+    <div class="container blog-hero-inner">
+      <p class="hero-eyebrow" data-reveal>✦ The Travellian Journal</p>
+      <h1 class="blog-hero-title" data-reveal>Stories, guides &amp;<br>tips from the road.</h1>
+      <p class="blog-hero-sub" data-reveal>
+        An insight into the incredible experiences waiting for you around the world —
+        written by our planners and travellers.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ FEATURED POST ══════════ -->
+  <section class="section">
+    <div class="container">
+      <article class="featured-post" data-reveal>
+        <div class="featured-media">
+          <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=75" alt="Beautiful Italy"/>
+          <span class="post-tag post-tag--lg">Featured</span>
+        </div>
+        <div class="featured-body">
+          <p class="post-meta">12 Mar 2024 · 6 min read · by Marco Rossi</p>
+          <h2>Beautiful Italy — let's travel</h2>
+          <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
+          <p>From the canals of Venice to the cliffs of the Amalfi Coast, Italy rewards the traveller who slows down. Here's how to see it without rushing, and why the best moments usually happen between the landmarks.</p>
+          <a href="#" class="btn btn-primary">Read the full story →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══════════ POST GRID ══════════ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-eyebrow">Latest Articles</p>
+          <h2 class="section-title">Fresh from the journal</h2>
+          <p class="section-desc">Guides, tips and personal tales to inspire your next trip.</p>
+        </div>
+        <div class="blog-filters" role="tablist">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="guides">Guides</button>
+          <button class="filter-btn" data-filter="tips">Tips</button>
+          <button class="filter-btn" data-filter="stories">Stories</button>
+        </div>
+      </div>
+
+      <div class="post-grid post-grid--blog" id="postGrid">
+
+        <article class="post-card" data-cat="stories" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=70" alt="Italy" loading="lazy"/>
+            <span class="post-tag">Stories</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">12 Mar 2024 · 6 min read</p>
+            <h3>Beautiful Italy — let's travel</h3>
+            <p>From the canals of Venice to the cliffs of the Amalfi Coast — how to see Italy without rushing it.</p>
+            <a href="#" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-cat="guides" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=800&q=70" alt="Athens" loading="lazy"/>
+            <span class="post-tag">Guides</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">28 Feb 2024 · 4 min read</p>
+            <h3>Athens beyond the Acropolis</h3>
+            <p>Rooftop bars, hidden tavernas and the best sunset spots the guidebooks keep forgetting.</p>
+            <a href="#" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-cat="tips" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=70" alt="Road trip" loading="lazy"/>
+            <span class="post-tag">Tips</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">05 Feb 2024 · 8 min read</p>
+            <h3>The 10 rules of a perfect road trip</h3>
+            <p>Pack light, plan loosely and always, always take the slower road. Our planners explain why.</p>
+            <a href="#" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-cat="guides" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=70" alt="Venice" loading="lazy"/>
+            <span class="post-tag">Guides</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">22 Jan 2024 · 5 min read</p>
+            <h3>Venice in 3 days (without the crowds)</h3>
+            <p>Where to stay, what to skip, and the quiet corners of Venice most visitors never find.</p>
+            <a href="#" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-cat="tips" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=70" alt="Beach" loading="lazy"/>
+            <span class="post-tag">Tips</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">14 Jan 2024 · 7 min read</p>
+            <h3>How to pack for two weeks in a carry-on</h3>
+            <p>A capsule wardrobe, a few clever accessories and a laundry plan — that's all you need.</p>
+            <a href="#" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-cat="stories" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=70" alt="Mountain" loading="lazy"/>
+            <span class="post-tag">Stories</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">02 Jan 2024 · 9 min read</p>
+            <h3>A week alone in the Dolomites</h3>
+            <p>What I learned about silence, altitude and my own two feet on a solo hike through northern Italy.</p>
+            <a href="#" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-cat="guides" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=70" alt="Rome" loading="lazy"/>
+            <span class="post-tag">Guides</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">19 Dec 2023 · 6 min read</p>
+            <h3>Rome's best food streets, mapped</h3>
+            <p>Testaccio, Trastevere and beyond — where locals actually eat, and what to order.</p>
+            <a href="#" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-cat="tips" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=70" alt="Resort" loading="lazy"/>
+            <span class="post-tag">Tips</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">08 Dec 2023 · 5 min read</p>
+            <h3>Choosing the right resort for your family</h3>
+            <p>Kids' clubs, pool depth, meal plans — the details that make or break a family holiday.</p>
+            <a href="#" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-cat="stories" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" alt="Paris" loading="lazy"/>
+            <span class="post-tag">Stories</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">24 Nov 2023 · 4 min read</p>
+            <h3>Paris on a rainy Tuesday</h3>
+            <p>The city is at its best when it's grey — here's a slow itinerary for a wet day in Paris.</p>
+            <a href="#" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="blog-loadmore">
+        <button class="btn btn-outline" id="loadMore" type="button">Load more articles</button>
       </div>
     </div>
   </section>
 
+  <!-- ══════════ NEWSLETTER ══════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter" data-reveal>
+        <div class="newsletter-text">
+          <h2>Never miss a story</h2>
+          <p>Get new guides, tips and travel deals in your inbox once a month. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <input type="email" id="newsletterEmail" placeholder="you@example.com" aria-label="Email address" required/>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-mark">✈</span>
+            <span class="logo-text">Travellian</span>
+          </a>
+          <p>A travel agency working with both large and small tour operators around the world to create incredible travel experiences.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook">Fb</a>
+            <a href="#" aria-label="Twitter">Tw</a>
+            <a href="#" aria-label="Instagram">Ig</a>
+            <a href="#" aria-label="LinkedIn">In</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="index.html#destinations">Europe</a></li>
+            <li><a href="index.html#destinations">Asia</a></li>
+            <li><a href="index.html#destinations">Americas</a></li>
+            <li><a href="index.html#destinations">Africa</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:siam.alrazi@gmail.com">siam.alrazi@gmail.com</a></li>
+            <li><a href="tel:+1234567890">+1 234 567 890</a></li>
+            <li>123 Travel Street</li>
+            <li>New York, USA</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2024</span> Travellian. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <img src="" alt="" id="lightboxImg"/>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>

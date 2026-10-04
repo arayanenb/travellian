@@ -3,408 +3,588 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Travellian – Travel Agency</title>
+  <title>Travellian — Start Your Unforgettable Journey</title>
+  <meta name="description" content="Travellian is a travel agency crafting unforgettable journeys — handpicked destinations, expert planners and 24/7 support."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
 
-  <!-- ── NAVBAR ── -->
-  <nav class="navbar">
-    <div class="nav-logo">
-      <span class="logo-icon">✈</span>
-      <span class="logo-text">nbtravels</span>
-    </div>
-    <ul class="nav-links">
-      <li class="active">Home</li>
-      <li>Explore</li>
-      <a href="#Travel"><li>Travel</li></a>
-      <a href="blog.html" target="_blank"><li>Blog</li></a>
-      <li>Pricing</li>
-    </ul>
-    <div class="nav-auth">
-      <button class="btn-login">Login</button>
-      <button class="btn-signup">Sign Up</button>
-    </div>
-  </nav>
+  <!-- ══════════ NAVBAR ══════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">✈</span>
+        <span class="logo-text">Travellian</span>
+      </a>
 
-  <!-- ── HERO ── -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">Start your unforgettable<br>journey with us.</h1>
-      <p class="hero-sub">The best travel for your journey begins now</p>
-
-      <!-- BOOKING BAR -->
-      <form onsubmit="reserving(event)" class="booking-bar">
-        <div class="booking-field">
-          <label>DESTINATION</label>
-          <input id="city" type="text" placeholder="city"/>
+      <nav class="nav-links" id="navLinks" aria-label="Main">
+        <a href="index.html" class="active">Home</a>
+        <a href="#destinations">Explore</a>
+        <a href="#planners">Travel</a>
+        <a href="blog.html">Blog</a>
+        <a href="#offers">Pricing</a>
+        <div class="nav-mobile-auth">
+          <button class="btn btn-ghost" type="button">Login</button>
+          <button class="btn btn-primary" type="button">Sign Up</button>
         </div>
-        <div class="booking-divider"></div>
+      </nav>
+
+      <div class="nav-auth">
+        <button class="btn btn-ghost" type="button">Login</button>
+        <button class="btn btn-primary" type="button">Sign Up</button>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <p class="hero-eyebrow" data-reveal>✦ Crafted journeys since 2004</p>
+      <h1 class="hero-title" data-reveal>Start your unforgettable<br>journey with us.</h1>
+      <p class="hero-sub" data-reveal>
+        Handpicked destinations, expert local guides and 24/7 support —
+        the best travel for your journey begins now.
+      </p>
+
+      <form class="booking-bar" id="bookingForm" novalidate data-reveal>
         <div class="booking-field">
-          <label>PERSON</label>
-          <select id="people">
-            <option>Choose an option</option>
-            <option selected>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5+</option>
+          <label for="city">Destination</label>
+          <input id="city" name="city" type="text" placeholder="Where to?" autocomplete="off"/>
+        </div>
+
+        <div class="booking-field">
+          <label for="people">Travellers</label>
+          <select id="people" name="people">
+            <option value="">Select</option>
+            <option value="1" selected>1 person</option>
+            <option value="2">2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="5+">5+ people</option>
           </select>
         </div>
-        <div class="booking-divider"></div>
+
         <div class="booking-field">
-          <label>CHECK IN</label>
-          <input id="check_in" type="text" placeholder="Sun, 17th Sep 2020"/>
+          <label for="check_in">Check in</label>
+          <input id="check_in" name="check_in" type="date"/>
         </div>
-        <div class="booking-divider"></div>
+
         <div class="booking-field">
-          <label>CHECK OUT</label>
-          <input id="check_out" type="text" placeholder="Tue, 17th Oct 2020"/>
+          <label for="check_out">Check out</label>
+          <input id="check_out" name="check_out" type="date"/>
         </div>
-        <button type="submit" class="booking-btn">Book<br>Now <span>→</span></button>
+
+        <button type="submit" class="booking-btn">
+          <span>Book<br>Now</span>
+          <span class="booking-arrow">→</span>
+        </button>
       </form>
+
+      <div class="hero-stats" data-reveal>
+        <div class="stat"><strong data-count="180" data-suffix="+">0</strong><span>Destinations</span></div>
+        <div class="stat"><strong data-count="12" data-suffix="k+">0</strong><span>Happy travellers</span></div>
+        <div class="stat"><strong data-count="20" data-suffix=" yrs">0</strong><span>Experience</span></div>
+        <div class="stat"><strong data-count="49" data-divide="10">0</strong><span>Average rating</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- ── POPULAR DESTINATIONS ── -->
-  <section class="section destinations">
-    <div class="section-header">
+  <!-- ══════════ DESTINATIONS ══════════ -->
+  <section class="section" id="destinations" data-slider>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-eyebrow">Popular Destinations</p>
+          <h2 class="section-title">Places travellers love the most</h2>
+          <p class="section-desc">From historical wonders to natural marvels — the destinations our travellers can't stop talking about.</p>
+        </div>
+        <div class="carousel-btns">
+          <button class="cbtn" data-prev aria-label="Previous destinations">←</button>
+          <button class="cbtn" data-next aria-label="Next destinations">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="slider-viewport">
+        <div class="slider-track dest-track">
+          <article class="dest-card" data-reveal>
+            <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=800&q=70" alt="Brandenburg Gate in Berlin" loading="lazy"/>
+            <div class="dest-shade"></div>
+            <div class="dest-label"><span class="dest-name">Monument of Berlin</span><span class="dest-country">📍 Berlin, Germany</span></div>
+            <span class="dest-price">from $420</span>
+          </article>
+          <article class="dest-card" data-reveal>
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=70" alt="Millennium Bridge in London" loading="lazy"/>
+            <div class="dest-shade"></div>
+            <div class="dest-label"><span class="dest-name">Millennium Bridge</span><span class="dest-country">📍 London, United Kingdom</span></div>
+            <span class="dest-price">from $530</span>
+          </article>
+          <article class="dest-card" data-reveal>
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=70" alt="Rialto Bridge in Venice" loading="lazy"/>
+            <div class="dest-shade"></div>
+            <div class="dest-label"><span class="dest-name">Rialto Bridge</span><span class="dest-country">📍 Venice, Italy</span></div>
+            <span class="dest-price">from $610</span>
+          </article>
+          <article class="dest-card" data-reveal>
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=70" alt="The Colosseum in Rome" loading="lazy"/>
+            <div class="dest-shade"></div>
+            <div class="dest-label"><span class="dest-name">Centro di Roma</span><span class="dest-country">📍 Rome, Italy</span></div>
+            <span class="dest-price">from $580</span>
+          </article>
+          <article class="dest-card" data-reveal>
+            <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=800&q=70" alt="Sagrada Familia in Barcelona" loading="lazy"/>
+            <div class="dest-shade"></div>
+            <div class="dest-label"><span class="dest-name">Sagrada Família</span><span class="dest-country">📍 Barcelona, Spain</span></div>
+            <span class="dest-price">from $495</span>
+          </article>
+          <article class="dest-card" data-reveal>
+            <img src="https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=800&q=70" alt="Charles Bridge in Prague" loading="lazy"/>
+            <div class="dest-shade"></div>
+            <div class="dest-label"><span class="dest-name">Charles Bridge</span><span class="dest-country">📍 Prague, Czechia</span></div>
+            <span class="dest-price">from $380</span>
+          </article>
+          <article class="dest-card" data-reveal>
+            <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=70" alt="Belem Tower in Lisbon" loading="lazy"/>
+            <div class="dest-shade"></div>
+            <div class="dest-label"><span class="dest-name">Belém Tower</span><span class="dest-country">📍 Lisbon, Portugal</span></div>
+            <span class="dest-price">from $450</span>
+          </article>
+          <article class="dest-card" data-reveal>
+            <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=800&q=70" alt="The Acropolis in Athens" loading="lazy"/>
+            <div class="dest-shade"></div>
+            <div class="dest-label"><span class="dest-name">The Acropolis</span><span class="dest-country">📍 Athens, Greece</span></div>
+            <span class="dest-price">from $520</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ WHY US ══════════ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <div>
+          <p class="section-eyebrow">Why Travellian</p>
+          <h2 class="section-title">Travel smarter, worry less</h2>
+          <p class="section-desc">Everything you need for a stress-free trip — planned, booked and supported by people who've been there.</p>
+        </div>
+      </div>
+
+      <div class="features">
+        <article class="feature" data-reveal>
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h3>Handpicked stays</h3>
+          <p>Every hotel and villa is personally vetted by our team — no surprises when you arrive.</p>
+        </article>
+        <article class="feature" data-reveal>
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Best price promise</h3>
+          <p>Find the same itinerary cheaper elsewhere and we'll match it — plus 5% off.</p>
+        </article>
+        <article class="feature" data-reveal>
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>24/7 real support</h3>
+          <p>A real human on the line at any hour, in any timezone, for the whole trip.</p>
+        </article>
+        <article class="feature" data-reveal>
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+          <h3>Tailor-made trips</h3>
+          <p>Tell us your pace, budget and interests — we build the itinerary around you.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ OFFERS ══════════ -->
+  <section class="section" id="offers" data-slider>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-eyebrow">Special Offers</p>
+          <h2 class="section-title">Deals worth packing for</h2>
+          <p class="section-desc">Limited-time packages with flights, stays and experiences bundled together.</p>
+        </div>
+        <div class="carousel-btns">
+          <button class="cbtn" data-prev aria-label="Previous offers">←</button>
+          <button class="cbtn" data-next aria-label="Next offers">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="slider-viewport">
+        <div class="slider-track offer-track">
+          <article class="offer-card" data-reveal>
+            <div class="offer-media">
+              <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=70" alt="Lisbon, Portugal" loading="lazy"/>
+              <span class="badge badge--hot">Best seller</span>
+            </div>
+            <div class="offer-body">
+              <div class="offer-top"><h3>Lisbon, Portugal</h3><div class="stars">★★★★★</div></div>
+              <p>5 nights and 4 days in a 5-star hotel, breakfast and lunch included. Very popular during the renaissance.</p>
+              <div class="offer-footer">
+                <span class="offer-price">From <strong>$500</strong></span>
+                <button type="button" class="btn btn-outline" data-book="Lisbon">Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card" data-reveal>
+            <div class="offer-media">
+              <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=800&q=70" alt="Athens, Greece" loading="lazy"/>
+              <span class="badge">-15%</span>
+            </div>
+            <div class="offer-body">
+              <div class="offer-top"><h3>Athens, Greece</h3><div class="stars">★★★★★</div></div>
+              <p>5 nights and 4 days in a 5-star hotel, breakfast and lunch included. Very popular during the renaissance.</p>
+              <div class="offer-footer">
+                <span class="offer-price">From <strong>$800</strong></span>
+                <button type="button" class="btn btn-outline" data-book="Athens">Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card" data-reveal>
+            <div class="offer-media">
+              <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=70" alt="Rome, Italy" loading="lazy"/>
+              <span class="badge">Popular</span>
+            </div>
+            <div class="offer-body">
+              <div class="offer-top"><h3>Rome, Italy</h3><div class="stars">★★★★★</div></div>
+              <p>5 nights and 4 days in a 5-star hotel, breakfast and lunch included. Very popular during the renaissance.</p>
+              <div class="offer-footer">
+                <span class="offer-price">From <strong>$750</strong></span>
+                <button type="button" class="btn btn-outline" data-book="Rome">Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card" data-reveal>
+            <div class="offer-media">
+              <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=800&q=70" alt="Berlin, Germany" loading="lazy"/>
+              <span class="badge">City break</span>
+            </div>
+            <div class="offer-body">
+              <div class="offer-top"><h3>Berlin, Germany</h3><div class="stars">★★★★☆</div></div>
+              <p>4 nights and 3 days in a boutique hotel, breakfast included. Art, history and unforgettable nightlife.</p>
+              <div class="offer-footer">
+                <span class="offer-price">From <strong>$620</strong></span>
+                <button type="button" class="btn btn-outline" data-book="Berlin">Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card" data-reveal>
+            <div class="offer-media">
+              <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=70" alt="Venice, Italy" loading="lazy"/>
+              <span class="badge">Romantic</span>
+            </div>
+            <div class="offer-body">
+              <div class="offer-top"><h3>Venice, Italy</h3><div class="stars">★★★★★</div></div>
+              <p>3 nights and 4 days in a canal-side hotel, breakfast and a private gondola tour included.</p>
+              <div class="offer-footer">
+                <span class="offer-price">From <strong>$690</strong></span>
+                <button type="button" class="btn btn-outline" data-book="Venice">Details</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="offer-card" data-reveal>
+            <div class="offer-media">
+              <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" alt="Paris, France" loading="lazy"/>
+              <span class="badge badge--hot">Top rated</span>
+            </div>
+            <div class="offer-body">
+              <div class="offer-top"><h3>Paris, France</h3><div class="stars">★★★★★</div></div>
+              <p>5 nights and 4 days in a 5-star hotel near the Louvre, breakfast plus a Seine dinner cruise.</p>
+              <div class="offer-footer">
+                <span class="offer-price">From <strong>$880</strong></span>
+                <button type="button" class="btn btn-outline" data-book="Paris">Details</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CTA ══════════ -->
+  <section class="cta">
+    <div class="container cta-inner" data-reveal>
       <div>
-        <p class="section-sub">Popular Destinations</p>
-        <p class="section-desc">Most popular destinations around the world, from historical places to natural wonders.</p>
+        <p class="section-eyebrow section-eyebrow--light">Ready when you are</p>
+        <h2>Let's plan your next great story.</h2>
+        <p>Talk to a specialist and get a personalised itinerary within 24 hours — free, with no obligation.</p>
       </div>
-      <div class="carousel-btns">
-        <button class="cbtn">←</button>
-        <button class="cbtn">→</button>
-      </div>
-    </div>
-    <div class="dest-slider-container">
-  <div class="dest-grid">
-    <div class="dest-card">
-      <div class="dest-img" style="background:linear-gradient(to bottom, #5a7a9a 0%, #2d4a6a 100%)">
-        <div class="dest-label">
-          <span>Monument of Berlin</span>
-          <span class="dest-country">Berlin, Germany</span>
-        </div>
-      </div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-img" style="background:linear-gradient(to bottom, #7a9a5a 0%, #3a5a2d 100%)">
-        <div class="dest-label">
-          <span>Millennium Bridge</span>
-          <span class="dest-country">London, United Kingdom</span>
-        </div>
-      </div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-img" style="background:linear-gradient(to bottom, #9a7a5a 0%, #6a4a2d 100%)">
-        <div class="dest-label">
-          <span>Rialto Bridge</span>
-          <span class="dest-country">Venice, Italy</span>
-        </div>
-      </div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-img" style="background:linear-gradient(to bottom, #9a7a5a 0%, #6a4a2d 100%)">
-        <div class="dest-label">
-          <span>Rialto Bridge</span>
-          <span class="dest-country">Venice, Italy</span>
-        </div>
-      </div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-img" style="background:linear-gradient(to bottom, #9a7a5a 0%, #6a4a2d 100%)">
-        <div class="dest-label">
-          <span>Rialto Bridge</span>
-          <span class="dest-country">Venice, Italy</span>
-        </div>
-      </div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-img" style="background:linear-gradient(to bottom, #9a7a5a 0%, #6a4a2d 100%)">
-        <div class="dest-label">
-          <span>Rialto Bridge</span>
-          <span class="dest-country">Venice, Italy</span>
-        </div>
-      </div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-img" style="background:linear-gradient(to bottom, #9a7a5a 0%, #6a4a2d 100%)">
-        <div class="dest-label">
-          <span>Rialto Bridge</span>
-          <span class="dest-country">Venice, Italy</span>
-        </div>
-      </div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-img" style="background:linear-gradient(to bottom, #7a5a9a 0%, #4a2d6a 100%)">
-        <div class="dest-label">
-          <span>Centro di Roma</span>
-          <span class="dest-country">Lisbon, Portugal</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  </section>
-
-  <!-- ── SPECIAL OFFER ── -->
-  <section class="section offers">
-    <div class="section-header">
-      <div>
-        <p class="section-sub">Special Offer</p>
-        <p class="section-desc">Check out our special offer and discounts.</p>
-      </div>
-      <div class="carousel-btns">
-        <button class="cbtn">←</button>
-        <button class="cbtn">→</button>
-      </div>
-    </div>
-    <div class="offers-grid">
-
-      <div class="offer-card">
-        <div class="offer-img offer-img--1"></div>
-        <div class="offer-body">
-          <div class="offer-top">
-            <h4>Lisbon, Portugal</h4>
-            <div class="stars">★★★★★</div>
-          </div>
-          <p>5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.</p>
-          <div class="offer-footer">
-            <span class="offer-price">From <strong>$500</strong></span>
-            <button class="details-btn">DETAILS</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="offer-card">
-        <div class="offer-img offer-img--2"></div>
-        <div class="offer-body">
-          <div class="offer-top">
-            <h4>Athens, Greece</h4>
-            <div class="stars">★★★★★</div>
-          </div>
-          <p>5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.</p>
-          <div class="offer-footer">
-            <span class="offer-price">From <strong>$800</strong></span>
-            <button class="details-btn">DETAILS</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="offer-card">
-        <div class="offer-img offer-img--3"></div>
-        <div class="offer-body">
-          <div class="offer-top">
-            <h4>Rome, Italy</h4>
-            <div class="stars">★★★★★</div>
-          </div>
-          <p>5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.</p>
-          <div class="offer-footer">
-            <span class="offer-price">From <strong>$750</strong></span>
-            <button class="details-btn">DETAILS</button>
-          </div>
-        </div>
-      </div>
-      <div class="offer-card">
-        <div class="offer-img offer-img--3"></div>
-        <div class="offer-body">
-          <div class="offer-top">
-            <h4>Rome, Italy</h4>
-            <div class="stars">★★★★★</div>
-          </div>
-          <p>5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.</p>
-          <div class="offer-footer">
-            <span class="offer-price">From <strong>$750</strong></span>
-            <button class="details-btn">DETAILS</button>
-          </div>
-        </div>
-      </div>
-      <div>
-        div(
-        )
-      </div>
-      <div class="offer-card">
-        <div class="offer-img offer-img--3"></div>
-        <div class="offer-body">
-          <div class="offer-top">
-            <h4>Rome, Italy</h4>
-            <div class="stars">★★★★★</div>
-          </div>
-          <p>5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.</p>
-          <div class="offer-footer">
-            <span class="offer-price">From <strong>$750</strong></span>
-            <button class="details-btn">DETAILS</button>
-          </div>
-        </div>
-
+      <button class="btn btn-light btn-lg" type="button" data-book="Custom trip">Start planning →</button>
     </div>
   </section>
 
-  <!-- ── BLOG ── -->
-  <section class="section blog">
-    <div class="blog-grid">
-      <div class="blog-img-wrap">
-        <div class="blog-img"></div>
+  <!-- ══════════ BLOG PREVIEW ══════════ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-eyebrow">From the Blog</p>
+          <h2 class="section-title">Stories to inspire your next trip</h2>
+          <p class="section-desc">Guides, tips and personal tales from the road, written by our planners and travellers.</p>
+        </div>
+        <a href="blog.html" class="btn btn-outline">View all posts</a>
       </div>
-      <div class="blog-content">
-        <p class="section-sub">Our Blog</p>
-        <p class="section-desc">An insight into the incredible experience in the world</p>
-        <h2 class="blog-title">Beautiful Italy<br>Let's travel</h2>
-        <p class="blog-text">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
-        <a href="blog.html" class="read-more" target="_blank">Read More →</a>
+
+      <div class="post-grid">
+        <article class="post-card" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=70" alt="Beautiful Italy" loading="lazy"/>
+            <span class="post-tag">Italy</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">12 Mar 2024 · 6 min read</p>
+            <h3>Beautiful Italy — let's travel</h3>
+            <p>From the canals of Venice to the cliffs of the Amalfi Coast, here's how to see Italy without rushing it.</p>
+            <a href="blog.html" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=800&q=70" alt="Athens Greece" loading="lazy"/>
+            <span class="post-tag">Greece</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">28 Feb 2024 · 4 min read</p>
+            <h3>Athens beyond the Acropolis</h3>
+            <p>Rooftop bars, hidden tavernas and the best sunset spots the guidebooks keep forgetting.</p>
+            <a href="blog.html" class="read-more">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-reveal>
+          <div class="post-media">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=70" alt="Road trip" loading="lazy"/>
+            <span class="post-tag">Tips</span>
+          </div>
+          <div class="post-body">
+            <p class="post-meta">05 Feb 2024 · 8 min read</p>
+            <h3>The 10 rules of a perfect road trip</h3>
+            <p>Pack light, plan loosely and always, always take the slower road. Our planners explain why.</p>
+            <a href="blog.html" class="read-more">Read article →</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ── TRIP PLANNERS ── -->
-  <section id="Travel" class="section planners">
-    <div class="section-header">
-      <div>
-        <p class="section-sub">Trip Planners</p>
-        <p class="section-desc">20 years from now you will be more disappointed by the things that you didn't do.<br>Stop regretting and start travelling.</p>
-      </div>
-      <div class="carousel-btns">
-        <button class="cbtn">←</button>
-        <button class="cbtn">→</button>
-      </div>
-    </div>
-    <div class="planners-grid">
-      <div class="planner-card">
-        <div class="planner-img planner-img--1"></div>
-        <p class="planner-name">Marco Rossi</p>
-        <p class="planner-role">Europe Specialist</p>
-      </div>
-      <div class="planner-card">
-        <div class="planner-img planner-img--2"></div>
-        <p class="planner-name">Sophie Martin</p>
-        <p class="planner-role">Asia Specialist</p>
-      </div>
-      <div class="planner-card">
-        <div class="planner-img planner-img--3"></div>
-        <p class="planner-name">James Carter</p>
-        <p class="planner-role">Americas Specialist</p>
-      </div>
-      <div class="planner-card">
-        <div class="planner-img planner-img--4"></div>
-        <p class="planner-name">Leila Hassan</p>
-        <p class="planner-role">Africa Specialist</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── GALLERY ── -->
-  <section class="section gallery">
-    <div class="section-header">
-      <div>
-        <p class="section-sub">Destination Gallery</p>
-        <p class="section-desc">Our photo gallery on trip</p>
-      </div>
-      <div class="carousel-btns">
-        <button class="cbtn">←</button>
-        <button class="cbtn">→</button>
-      </div>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-img gallery-img--1"></div>
-      <div class="gallery-img gallery-img--2"></div>
-      <div class="gallery-img gallery-img--3"></div>
-      <div class="gallery-img gallery-img--4"></div>
-    </div>
-  </section>
-
-  <!-- ── TESTIMONIALS ── -->
-  <section class="section testimonials">
-    <p class="section-sub" style="text-align:center">Traveler's Experiences</p>
-    <p class="section-desc" style="text-align:center;max-width:500px;margin:0 auto 48px">Here are some awesome feedbacks from our travelers around the world.</p>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"The trip to Lisbon was absolutely magical. Travellian handled everything perfectly — hotels, tours, transfers. I couldn't have asked for a better experience."</p>
-        <div class="testi-author">
-          <div class="testi-avatar testi-avatar--1"></div>
-          <div>
-            <p class="testi-name">Sarah Johnson</p>
-            <p class="testi-loc">New York, USA</p>
-          </div>
+  <!-- ══════════ PLANNERS ══════════ -->
+  <section class="section" id="planners" data-slider>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-eyebrow">Trip Planners</p>
+          <h2 class="section-title">Real people, real expertise</h2>
+          <p class="section-desc">Twenty years from now you'll regret the trips you didn't take. Our specialists make sure you don't.</p>
+        </div>
+        <div class="carousel-btns">
+          <button class="cbtn" data-prev aria-label="Previous planners">←</button>
+          <button class="cbtn" data-next aria-label="Next planners">→</button>
         </div>
       </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Rome exceeded all my expectations. The team at Travellian planned an incredible itinerary with all the hidden gems locals love. Highly recommend!"</p>
-        <div class="testi-author">
-          <div class="testi-avatar testi-avatar--2"></div>
-          <div>
-            <p class="testi-name">David Chen</p>
-            <p class="testi-loc">Toronto, Canada</p>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p>"Athens was a dream come true. From the Acropolis to the local food scene, every detail was thoughtfully arranged. Travellian is simply the best."</p>
-        <div class="testi-author">
-          <div class="testi-avatar testi-avatar--3"></div>
-          <div>
-            <p class="testi-name">Amina Diallo</p>
-            <p class="testi-loc">Paris, France</p>
-          </div>
+    </div>
+
+    <div class="container">
+      <div class="slider-viewport">
+        <div class="slider-track planner-track">
+          <article class="planner-card" data-reveal>
+            <div class="planner-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=70" alt="Marco Rossi" loading="lazy"/></div>
+            <p class="planner-name">Marco Rossi</p><p class="planner-role">Europe Specialist</p>
+          </article>
+          <article class="planner-card" data-reveal>
+            <div class="planner-img"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=70" alt="Sophie Martin" loading="lazy"/></div>
+            <p class="planner-name">Sophie Martin</p><p class="planner-role">Asia Specialist</p>
+          </article>
+          <article class="planner-card" data-reveal>
+            <div class="planner-img"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=70" alt="James Carter" loading="lazy"/></div>
+            <p class="planner-name">James Carter</p><p class="planner-role">Americas Specialist</p>
+          </article>
+          <article class="planner-card" data-reveal>
+            <div class="planner-img"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=70" alt="Leila Hassan" loading="lazy"/></div>
+            <p class="planner-name">Leila Hassan</p><p class="planner-role">Africa Specialist</p>
+          </article>
+          <article class="planner-card" data-reveal>
+            <div class="planner-img"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=70" alt="Elena Petrova" loading="lazy"/></div>
+            <p class="planner-name">Elena Petrova</p><p class="planner-role">Polar Expeditions</p>
+          </article>
+          <article class="planner-card" data-reveal>
+            <div class="planner-img"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=70" alt="Noah Bennett" loading="lazy"/></div>
+            <p class="planner-name">Noah Bennett</p><p class="planner-role">Oceania Specialist</p>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
+  <!-- ══════════ GALLERY ══════════ -->
+  <section class="section section--alt" data-slider>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-eyebrow">Destination Gallery</p>
+          <h2 class="section-title">Postcards from our travellers</h2>
+          <p class="section-desc">A few frames from the thousands of trips we've helped put together.</p>
+        </div>
+        <div class="carousel-btns">
+          <button class="cbtn" data-prev aria-label="Previous photos">←</button>
+          <button class="cbtn" data-next aria-label="Next photos">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="slider-viewport">
+        <div class="slider-track gallery-track">
+          <button class="gallery-img" data-full="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=700&q=70" alt="Venice canal" loading="lazy"/></button>
+          <button class="gallery-img" data-full="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&q=70" alt="Paris skyline" loading="lazy"/></button>
+          <button class="gallery-img" data-full="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=700&q=70" alt="Athens Acropolis" loading="lazy"/></button>
+          <button class="gallery-img" data-full="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=700&q=70" alt="Rome Colosseum" loading="lazy"/></button>
+          <button class="gallery-img" data-full="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=70" alt="Tropical beach" loading="lazy"/></button>
+          <button class="gallery-img" data-full="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=700&q=70" alt="Mountain lake" loading="lazy"/></button>
+          <button class="gallery-img" data-full="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=700&q=70" alt="Forest road" loading="lazy"/></button>
+          <button class="gallery-img" data-full="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=700&q=70" alt="Resort pool" loading="lazy"/></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ TESTIMONIALS ══════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <div>
+          <p class="section-eyebrow">Traveller's Experiences</p>
+          <h2 class="section-title">Loved by travellers worldwide</h2>
+          <p class="section-desc">Here are some of the awesome feedbacks from our travellers around the world.</p>
+        </div>
+      </div>
+
+      <div class="testi-grid">
+        <article class="testi-card" data-reveal>
+          <div class="testi-stars">★★★★★</div>
+          <p>"The trip to Lisbon was absolutely magical. Travellian handled everything perfectly — hotels, tours, transfers. I couldn't have asked for a better experience."</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=70" alt="Sarah Johnson" loading="lazy"/></div>
+            <div><p class="testi-name">Sarah Johnson</p><p class="testi-loc">New York, USA</p></div>
+          </div>
+        </article>
+        <article class="testi-card" data-reveal>
+          <div class="testi-stars">★★★★★</div>
+          <p>"Rome exceeded all my expectations. The team planned an incredible itinerary with all the hidden gems locals love. Highly recommend!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=70" alt="David Chen" loading="lazy"/></div>
+            <div><p class="testi-name">David Chen</p><p class="testi-loc">Toronto, Canada</p></div>
+          </div>
+        </article>
+        <article class="testi-card" data-reveal>
+          <div class="testi-stars">★★★★★</div>
+          <p>"Athens was a dream come true. From the Acropolis to the local food scene, every detail was thoughtfully arranged. Simply the best."</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=70" alt="Amina Diallo" loading="lazy"/></div>
+            <div><p class="testi-name">Amina Diallo</p><p class="testi-loc">Paris, France</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ NEWSLETTER ══════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter" data-reveal>
+        <div class="newsletter-text">
+          <h2>Get travel deals in your inbox</h2>
+          <p>Join 40,000+ travellers receiving one thoughtful email a month. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <input type="email" id="newsletterEmail" placeholder="you@example.com" aria-label="Email address" required/>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
   <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="nav-logo" style="margin-bottom:16px">
-          <span class="logo-icon">✈</span>
-          <span class="logo-text">Travellian</span>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-mark">✈</span>
+            <span class="logo-text">Travellian</span>
+          </a>
+          <p>A travel agency working with both large and small tour operators around the world to create incredible travel experiences.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook">Fb</a>
+            <a href="#" aria-label="Twitter">Tw</a>
+            <a href="#" aria-label="Instagram">Ig</a>
+            <a href="#" aria-label="LinkedIn">In</a>
+          </div>
         </div>
-        <p>A travel agency working in partnership with both large and small tour operators around Europe to create incredible travel experiences.</p>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="#destinations">Europe</a></li>
+            <li><a href="#destinations">Asia</a></li>
+            <li><a href="#destinations">Americas</a></li>
+            <li><a href="#destinations">Africa</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:siam.alrazi@gmail.com">siam.alrazi@gmail.com</a></li>
+            <li><a href="tel:+1234567890">+1 234 567 890</a></li>
+            <li>123 Travel Street</li>
+            <li>New York, USA</li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li>About Us</li>
-          <li>Careers</li>
-          <li>Blog</li>
-          <li>Press</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Destinations</h4>
-        <ul>
-          <li>Europe</li>
-          <li>Asia</li>
-          <li>Americas</li>
-          <li>Africa</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li>siam.alrazi@gmail.com</li>
-          <li>+1 234 567 890</li>
-          <li>123 Travel Street</li>
-          <li>New York, USA</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2023 Travellian. All rights reserved.</p>
-      <div class="footer-socials">
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
+      <div class="footer-bottom">
+        <p>© <span id="year">2024</span> Travellian. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <img src="" alt="" id="lightboxImg"/>
+  </div>
 
   <script src="index.js"></script>
 </body>
