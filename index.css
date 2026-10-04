@@ -170,7 +170,7 @@ body {
   display: flex;
   align-items: stretch;
   background: var(--white);
-  border-radius: 16px;
+  border-radius: 25px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.12);
   overflow: hidden;
 }
