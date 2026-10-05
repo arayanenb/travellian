@@ -69,9 +69,9 @@ Get new guides, tips, and travel deals delivered to your inbox once a month. No 
 
 | | |
 |---|---|
-| **Email** | [siam.alrazi@gmail.com](mailto:siam.alrazi@gmail.com) |
-| **Phone** | +1 234 567 890 |
-| **Address** | 123 Travel Street, New York, USA |
+| **Email** | [-----------@gmail.com] |
+| **Phone** | +- --- --- --- |
+| **Address** | ----------, -, - |
 | **Hours** | 24/7 — because travel doesn't sleep |
 
 Follow us on **Facebook**, **Twitter**, **Instagram**, and **LinkedIn** for daily travel inspiration.
