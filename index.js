@@ -8,6 +8,27 @@
   const $  = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+  /* ────────── THEME TOGGLE ────────── */
+  const themeToggles = $$('[data-theme-toggle]');
+  const themeStorageKey = 'travellian-theme';
+  const savedTheme = localStorage.getItem(themeStorageKey);
+  const applyTheme = (theme) => {
+    const isDark = theme === 'dark';
+    document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+    themeToggles.forEach(button => {
+      button.setAttribute('aria-pressed', String(isDark));
+      button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      button.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+      button.textContent = isDark ? '☀' : '☾';
+    });
+  };
+  applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+  themeToggles.forEach(button => button.addEventListener('click', () => {
+    const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(themeStorageKey, theme);
+    applyTheme(theme);
+  }));
+
   const toastEl = $('#toast');
   let toastTimer;
   function toast(message, type = '') {
